@@ -1,7 +1,8 @@
 import axios from 'axios';
+import 'dotenv';
 import { mapApiToModel, Article } from './models';
 
-const API_KEY = '4bed0b83d8384773ab6fe4c419d3c253'; // <--- PUT YOUR KEY HERE
+const API_KEY = process.env.API_KEY;
 const BASE_URL = 'https://newsapi.org/v2/';
 
 export const fetchNewsByCity = async (city: string): Promise<Article[]> => {
